@@ -22,10 +22,10 @@ Since Bitskins returns JSON Files i have converted then to c# objects for easy u
 2 Run A Function simply call it as the following 
 
 ``` c#
-     //This will return the Bitskins Wallet Object
-     BitskinsApiV1.Bitskins.WalletObject wallet = BitskinsApiV1.Bitskins.Get_Account_Balance();
-     //once recieved you should be able to get funds availabe by calling the objects value
-      lblAccountBalance.Text = "$" + wallet.data.available_balance;
+            //This will return the Bitskins Wallet Object
+            BitskinsApiV1.Bitskins.WalletObject wallet = BitskinsApiV1.Bitskins.Get_Account_Balance();
+            //once recieved you should be able to get funds availabe by calling the objects value
+            lblAccountBalance.Text = "$" + wallet.data.available_balance;
  ```
  
  
@@ -36,7 +36,7 @@ Since Bitskins returns JSON Files i have converted then to c# objects for easy u
  To start 2 Factor Authentication simply call this method 
  
  ```C#
-      BitskinsApiV1.Bitskins.FA();
+            BitskinsApiV1.Bitskins.FA();
  ```
  
  To retrieve your 2 Factor Authentication Code ( 6 Diget Code )
@@ -44,6 +44,6 @@ Since Bitskins returns JSON Files i have converted then to c# objects for easy u
  Simply Call this function 
  
  ```C#
-    txt2FA.Text = BitskinsApiV1.Bitskins.FACode;
+            txt2FA.Text = BitskinsApiV1.Bitskins.FACode;
  ```
  
