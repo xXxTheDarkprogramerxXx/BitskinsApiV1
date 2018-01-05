@@ -78,8 +78,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(653, 319);
-            this.splitContainer1.SplitterDistance = 217;
+            this.splitContainer1.Size = new System.Drawing.Size(897, 319);
+            this.splitContainer1.SplitterDistance = 298;
             this.splitContainer1.TabIndex = 1;
             // 
             // label2
@@ -97,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSecret.Location = new System.Drawing.Point(3, 95);
             this.txtSecret.Name = "txtSecret";
-            this.txtSecret.Size = new System.Drawing.Size(211, 22);
+            this.txtSecret.Size = new System.Drawing.Size(292, 22);
             this.txtSecret.TabIndex = 3;
             // 
             // txtApiKey
@@ -106,7 +106,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApiKey.Location = new System.Drawing.Point(3, 45);
             this.txtApiKey.Name = "txtApiKey";
-            this.txtApiKey.Size = new System.Drawing.Size(211, 22);
+            this.txtApiKey.Size = new System.Drawing.Size(292, 22);
             this.txtApiKey.TabIndex = 2;
             // 
             // label1
@@ -138,7 +138,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.btnGetAllItemPrices);
             this.splitContainer2.Panel2.Controls.Add(this.lblAccountBalance);
             this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Size = new System.Drawing.Size(432, 319);
+            this.splitContainer2.Size = new System.Drawing.Size(595, 319);
             this.splitContainer2.SplitterDistance = 45;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -183,9 +183,8 @@
             // 
             // lblAccountBalance
             // 
-            this.lblAccountBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAccountBalance.AutoSize = true;
-            this.lblAccountBalance.Location = new System.Drawing.Point(376, 6);
+            this.lblAccountBalance.Location = new System.Drawing.Point(443, 1);
             this.lblAccountBalance.Name = "lblAccountBalance";
             this.lblAccountBalance.Size = new System.Drawing.Size(44, 17);
             this.lblAccountBalance.TabIndex = 1;
@@ -193,8 +192,7 @@
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(315, 26);
+            this.button3.Location = new System.Drawing.Point(424, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 23);
             this.button3.TabIndex = 0;
@@ -207,7 +205,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(653, 319);
+            this.ClientSize = new System.Drawing.Size(897, 319);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
