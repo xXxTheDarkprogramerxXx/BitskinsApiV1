@@ -86,6 +86,10 @@ namespace DemoProject
         private void spinner_Click(object sender, EventArgs e)
         {
 
+            var invenotryonsale = BitskinsApiV1.Bitskins.Get_Invenotry_On_Sale(BitskinsApiV1.Bitskins.AppID_Enum.CSGO, 0, "", "",txtItemName.Text.Trim() , -1, -1, 0, 0, 0, 0);
+
+            MessageBox.Show("Item " + txtItemName.Text.Trim() + "Is Currently Going For " + invenotryonsale.data.items[0].suggested_price);
+
         }
     }
 }

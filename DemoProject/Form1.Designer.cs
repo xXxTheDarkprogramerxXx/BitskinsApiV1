@@ -41,6 +41,7 @@
             this.btnGetAllItemPrices = new System.Windows.Forms.Button();
             this.lblAccountBalance = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtItemName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -134,6 +135,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.txtItemName);
             this.splitContainer2.Panel2.Controls.Add(this.spinner);
             this.splitContainer2.Panel2.Controls.Add(this.btnGetAllItemPrices);
             this.splitContainer2.Panel2.Controls.Add(this.lblAccountBalance);
@@ -163,11 +165,11 @@
             // 
             // spinner
             // 
-            this.spinner.Location = new System.Drawing.Point(17, 110);
+            this.spinner.Location = new System.Drawing.Point(17, 158);
             this.spinner.Name = "spinner";
-            this.spinner.Size = new System.Drawing.Size(147, 23);
+            this.spinner.Size = new System.Drawing.Size(192, 23);
             this.spinner.TabIndex = 3;
-            this.spinner.Text = "testspin";
+            this.spinner.Text = "Get Suggested item price";
             this.spinner.UseVisualStyleBackColor = true;
             this.spinner.Click += new System.EventHandler(this.spinner_Click);
             // 
@@ -199,6 +201,13 @@
             this.button3.Text = "Get Balance";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtItemName
+            // 
+            this.txtItemName.Location = new System.Drawing.Point(17, 130);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(192, 22);
+            this.txtItemName.TabIndex = 4;
             // 
             // Form1
             // 
@@ -240,6 +249,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnGetAllItemPrices;
         private System.Windows.Forms.Button spinner;
+        private System.Windows.Forms.TextBox txtItemName;
     }
 }
 

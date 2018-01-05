@@ -1184,7 +1184,7 @@ namespace BitskinsApiV1
         /// <param name="Is_Souvenir">{-1|0|1}. For CS:GO only. (optional)</param>
         /// <param name="Per_Page">Results per page. Must be either 24, or 480. (optional)</param>
         /// <returns></returns>
-        public InventoryOnSaleObject Get_Invenotry_On_Sale(
+        public static InventoryOnSaleObject Get_Invenotry_On_Sale(
             int app_id
             ,int Page = 0
             ,string Sort_by = ""
@@ -1321,6 +1321,8 @@ namespace BitskinsApiV1
 
             #endregion << Last Optional Paramaters >>
 
+            url += "&code=" + FACode;
+
             HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
             getRequest.Method = "GET";
             try
@@ -1353,7 +1355,7 @@ namespace BitskinsApiV1
         /// </summary>
         /// <param name="Item_Ids">Upto 250 comma-delimited item IDs.</param>
         /// <returns></returns>
-        public SpesificSaleItemObject Get_Specific_Items_On_Sale(string Item_Ids)
+        public static SpesificSaleItemObject Get_Specific_Items_On_Sale(string Item_Ids)
         {
             //we always check the settings first
             CheckSettings();
