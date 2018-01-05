@@ -82,5 +82,10 @@ namespace DemoProject
             DynamicMarketInfo dynamic = new DynamicMarketInfo();
             dynamic.Show();
         }
+
+        private void spinner_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
