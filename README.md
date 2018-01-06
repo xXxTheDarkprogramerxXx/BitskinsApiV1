@@ -2,6 +2,10 @@
 
 ## This project was created to interact with bitskins api using a simple .net client all code is supplied and most of it is running as of the first commit 
 
+### Nuget Packages are now avaialble 
+https://www.nuget.org/packages/BitskinsApiV1/1.0.0#
+
+
 ### Running the Project 
 
 Running the project is quite simple link the BitskinsAPIv1.dll to your project and add the following lines at the start of your code 
