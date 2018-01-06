@@ -5,6 +5,8 @@
 ### Nuget Packages are now avaialble 
 https://www.nuget.org/packages/BitskinsApiV1/1.0.0#
 
+Install-Package BitskinsApiV1 -Version 1.0.0
+
 
 ### Running the Project 
 
