@@ -308,10 +308,10 @@ namespace BitskinsApiV1
         public class InventoryOnSalePatternInfo
         {
             public int paintindex { get; set; }
-            public int paintseed { get; set; }
+            public string paintseed { get; set; }
             public int rarity { get; set; }
             public int quality { get; set; }
-            public int paintwear { get; set; }
+            public string paintwear { get; set; }
         }
 
         public class InventoryOnSaleTags
@@ -375,10 +375,10 @@ namespace BitskinsApiV1
         public class SpesificSaleItemPatternInfo
         {
             public int paintindex { get; set; }
-            public int paintseed { get; set; }
+            public string paintseed { get; set; }
             public int rarity { get; set; }
             public int quality { get; set; }
-            public int paintwear { get; set; }
+            public string paintwear { get; set; }
         }
 
         public class SpesificSaleItemTags
@@ -694,10 +694,10 @@ namespace BitskinsApiV1
         public class TradePatternInfo
         {
             public int paintindex { get; set; }
-            public int paintseed { get; set; }
+            public string paintseed { get; set; }
             public int rarity { get; set; }
             public int quality { get; set; }
-            public int paintwear { get; set; }
+            public string paintwear { get; set; }
         }
 
         public class TradeTags
