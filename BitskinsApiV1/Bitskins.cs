@@ -1184,7 +1184,7 @@ namespace BitskinsApiV1
         /// <param name="Is_Souvenir">{-1|0|1}. For CS:GO only. (optional)</param>
         /// <param name="Per_Page">Results per page. Must be either 24, or 480. (optional)</param>
         /// <returns></returns>
-        public static InventoryOnSaleObject Get_Invenotry_On_Sale(
+        public static InventoryOnSaleObject Get_Inventory_On_Sale(
             int app_id
             ,int Page = 0
             ,string Sort_by = ""
