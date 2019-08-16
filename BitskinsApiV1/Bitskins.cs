@@ -982,33 +982,7 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static GetMarketObject Get_Price_Data_For_Items_On_Sale()
         {
-            CheckSettings();
-
-            //we always check the settings first
-            CheckSettings();
-            //url for Bitskins Api
-            string url = @"https://bitskins.com/api/v1/get_all_item_prices/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + AppID.ToString();
-            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
-            getRequest.Method = "GET";
-            try
-            {
-                var getResponse = (HttpWebResponse)getRequest.GetResponse();
-                Stream newStream = getResponse.GetResponseStream();
-                StreamReader sr = new StreamReader(newStream);
-                var result = sr.ReadToEnd();
-                var splashInfo = JsonConvert.DeserializeObject<GetMarketObject>(result);
-                if (splashInfo.status != "failed")
-                {
-                    return splashInfo;
-                }
-                throw new Exception("Could Not DeserializeObject from Bitskins");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Internal Error on Get Response please ensure your api is set and 2 factor authentication is running correctly");
-            }
-
-            return null;
+            return Get_Price_Data_For_Items_On_Sale(AppID.ToString());
         }
 
         /// <summary>
@@ -1023,7 +997,7 @@ namespace BitskinsApiV1
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
-            string url = @"https://bitskins.com/api/v1/get_all_item_prices/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + appid;
+            string url = @"https://bitskins.com/api/v1/get_price_data_for_items_on_sale/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + appid;
             HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
             getRequest.Method = "GET";
             try
