@@ -150,7 +150,7 @@ namespace BitskinsApiV1
             public string highest_price { get; set; }
             public string cumulative_price { get; set; }
             public GetMarketRecentSalesInfo recent_sales_info { get; set; }
-            public int updated_at { get; set; }
+            public int? updated_at { get; set; }
         }
 
         public class GetMarketData
