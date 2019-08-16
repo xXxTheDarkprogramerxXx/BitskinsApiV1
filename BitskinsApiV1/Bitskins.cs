@@ -43,6 +43,7 @@ namespace BitskinsApiV1
             public const int PD2 = 218620;
             public const int RUST = 252490;
             public const int KF2 = 232090;
+            public const int UNTURNED = 304930;
         }
 
         #region << 2 Factor Authentication >>
