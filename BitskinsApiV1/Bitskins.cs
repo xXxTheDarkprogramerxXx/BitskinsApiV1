@@ -43,6 +43,7 @@ namespace BitskinsApiV1
             public const int PD2 = 218620;
             public const int RUST = 252490;
             public const int KF2 = 232090;
+            public const int UNTURNED = 304930;
         }
 
         #region << 2 Factor Authentication >>
@@ -150,7 +151,7 @@ namespace BitskinsApiV1
             public string highest_price { get; set; }
             public string cumulative_price { get; set; }
             public GetMarketRecentSalesInfo recent_sales_info { get; set; }
-            public int updated_at { get; set; }
+            public int? updated_at { get; set; }
         }
 
         public class GetMarketData
@@ -849,7 +850,7 @@ namespace BitskinsApiV1
         /// </summary>
         private static void CheckSettings()
         {
-            if(Api_Key == string.Empty || Api_Key == "")
+            if(string.IsNullOrWhiteSpace(Api_Key))
             {
                 throw new Exception("Api_Key Not Set Please set api key before running the application");
             }
@@ -904,8 +905,6 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static GetAllItemPricesObject Get_All_Item_Prices()
         {
-            CheckSettings();
-
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
@@ -942,8 +941,6 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static GetAllItemPricesObject Get_All_Item_Prices(string appid)
         {
-            CheckSettings();
-
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
@@ -982,33 +979,7 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static GetMarketObject Get_Price_Data_For_Items_On_Sale()
         {
-            CheckSettings();
-
-            //we always check the settings first
-            CheckSettings();
-            //url for Bitskins Api
-            string url = @"https://bitskins.com/api/v1/get_all_item_prices/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + AppID.ToString();
-            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
-            getRequest.Method = "GET";
-            try
-            {
-                var getResponse = (HttpWebResponse)getRequest.GetResponse();
-                Stream newStream = getResponse.GetResponseStream();
-                StreamReader sr = new StreamReader(newStream);
-                var result = sr.ReadToEnd();
-                var splashInfo = JsonConvert.DeserializeObject<GetMarketObject>(result);
-                if (splashInfo.status != "failed")
-                {
-                    return splashInfo;
-                }
-                throw new Exception("Could Not DeserializeObject from Bitskins");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Internal Error on Get Response please ensure your api is set and 2 factor authentication is running correctly");
-            }
-
-            return null;
+            return Get_Price_Data_For_Items_On_Sale(AppID.ToString());
         }
 
         /// <summary>
@@ -1018,12 +989,10 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static GetMarketObject Get_Price_Data_For_Items_On_Sale(string appid)
         {
-            CheckSettings();
-
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
-            string url = @"https://bitskins.com/api/v1/get_all_item_prices/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + appid;
+            string url = @"https://bitskins.com/api/v1/get_price_data_for_items_on_sale/?api_key=" + Api_Key + "&code=" + FACode + "&app_id=" + appid;
             HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
             getRequest.Method = "GET";
             try
@@ -1092,8 +1061,6 @@ namespace BitskinsApiV1
         /// <returns></returns>
         public static AccountInvenotryObject Get_My_Inventory(string appid)
         {
-            CheckSettings();
-
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
@@ -1135,8 +1102,6 @@ namespace BitskinsApiV1
             CheckSettings();
 
             decimal rtndecimal = 0;
-
-
             string url = @"https://bitskins.com/api/v1/get_inventory_on_sale/?api_key=" + Api_Key + @"&page=1&app_id=730&market_hash_name=" + market_hash_name + "&code=" + FACode;
 
             HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -1404,8 +1369,6 @@ namespace BitskinsApiV1
             CheckSettings();
             //url for Bitskins Api
 
-
-
             string url = @"https://bitskins.com/api/v1/get_money_events/?api_key=" + Api_Key;
 
             if(PageNumber != -1)
@@ -1452,9 +1415,6 @@ namespace BitskinsApiV1
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
-
-
-
             string url = @"https://bitskins.com/api/v1/get_money_events/?api_key=" + Api_Key;
             url += "&amount=" + Ammount;
             url += "&withdrawal_method=" + withdrawl_method;
@@ -1500,8 +1460,6 @@ namespace BitskinsApiV1
             CheckSettings();
             //url for Bitskins Api
 
-
-
             string url = @"https://bitskins.com/api/v1/buy_item/?api_key=" + Api_Key;
             url += "&item_ids=" + itemids;
             url += "&prices=" + Ammount;
@@ -1546,8 +1504,6 @@ namespace BitskinsApiV1
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
-
-
 
             string url = @"https://bitskins.com/api/v1/list_item_for_sale/?api_key=" + Api_Key;
             url += "&item_ids=" + itemids;
@@ -1596,8 +1552,6 @@ namespace BitskinsApiV1
             CheckSettings();
             //url for Bitskins Api
 
-
-
             string url = @"https://bitskins.com/api/v1/modify_sale_item/?api_key=" + Api_Key;
             url += "&item_ids=" + itemids;
             url += "&prices=" + Ammount;
@@ -1641,8 +1595,6 @@ namespace BitskinsApiV1
             //we always check the settings first
             CheckSettings();
             //url for Bitskins Api
-
-
 
             string url = @"https://bitskins.com/api/v1/withdraw_item/?api_key=" + Api_Key;
             url += "&item_ids=" + itemids;
